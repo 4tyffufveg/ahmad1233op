@@ -4,19 +4,53 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Start Building...
+  instance1:
+    name: Instance 1
     runs-on: windows-latest
     timeout-minutes: 360
-    
+
     steps:
-      - name: Downloading & Installing Essentials
+      - name: Downloading & Installing Essentials (Instance 1)
         run: |
           Invoke-WebRequest -Uri "https://gitlab.com/gusta7w7/pcrdp-avica/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Show Website
+      - name: Show Website (Instance 1)
         run: cmd /c show.bat
 
-      - name: Time Counter
+      - name: Time Counter (Instance 1)
+        run: cmd /c loop.bat
+
+  instance2:
+    name: Instance 2
+    runs-on: windows-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Downloading & Installing Essentials (Instance 2)
+        run: |
+          Invoke-WebRequest -Uri "https://gitlab.com/gusta7w7/pcrdp-avica/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - name: Show Website (Instance 2)
+        run: cmd /c show.bat
+
+      - name: Time Counter (Instance 2)
+        run: cmd /c loop.bat
+
+  instance3:
+    name: Instance 3
+    runs-on: windows-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Downloading & Installing Essentials (Instance 3)
+        run: |
+          Invoke-WebRequest -Uri "https://gitlab.com/gusta7w7/pcrdp-avica/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - name: Show Website (Instance 3)
+        run: cmd /c show.bat
+
+      - name: Time Counter (Instance 3)
         run: cmd /c loop.bat
